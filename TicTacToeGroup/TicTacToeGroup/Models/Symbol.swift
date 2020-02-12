@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum Symbol: Int {
+    case blank = 0
+    case x = 1
+    case o = 2
+}
