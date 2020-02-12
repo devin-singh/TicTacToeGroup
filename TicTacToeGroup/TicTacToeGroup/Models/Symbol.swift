@@ -8,8 +8,16 @@
 
 import Foundation
 
-enum Symboll: Int {
-    case blank = 0
-    case x = 1
-    case o = 2
+struct Symbol {
+    static let blank: Int = 0
+    static let x: Int = 1
+    static let o: Int = 2
+    
+    static func getOpposite(symbol: Int) -> Int {
+        if symbol == Symbol.x {
+            return Symbol.o
+        } else {
+            return Symbol.x
+        }
+    }
 }
