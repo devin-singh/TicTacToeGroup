@@ -16,6 +16,8 @@
 		650A17C223F48AF900F08B0D /* TicTacToeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A17C123F48AF900F08B0D /* TicTacToeController.swift */; };
 		650A17C423F48B0500F08B0D /* TicTacToeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A17C323F48B0500F08B0D /* TicTacToeViewController.swift */; };
 		65C8B90623F4AF4600DEABF5 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B90523F4AF4600DEABF5 /* GameState.swift */; };
+		66AA654E23F4B875009B25E9 /* TicTacToeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AA654D23F4B875009B25E9 /* TicTacToeTableViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		650A17C123F48AF900F08B0D /* TicTacToeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeController.swift; sourceTree = "<group>"; };
 		650A17C323F48B0500F08B0D /* TicTacToeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewController.swift; sourceTree = "<group>"; };
 		65C8B90523F4AF4600DEABF5 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		66AA654D23F4B875009B25E9 /* TicTacToeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeTableViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				650A17C323F48B0500F08B0D /* TicTacToeViewController.swift */,
+				66AA654D23F4B875009B25E9 /* TicTacToeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			files = (
 				650A17C223F48AF900F08B0D /* TicTacToeController.swift in Sources */,
 				650A179E23F4862500F08B0D /* AppDelegate.swift in Sources */,
+				66AA654E23F4B875009B25E9 /* TicTacToeTableViewController.swift in Sources */,
 				650A17C423F48B0500F08B0D /* TicTacToeViewController.swift in Sources */,
 				65C8B90623F4AF4600DEABF5 /* GameState.swift in Sources */,
 				650A17A023F4862500F08B0D /* SceneDelegate.swift in Sources */,
