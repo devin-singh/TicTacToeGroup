@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum GameState {
+    
+    case tie
+    case winner
+    case turnTaken
+    case error
+}
