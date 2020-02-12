@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Symbol: Int {
+enum Symboll: Int {
     case blank = 0
     case x = 1
     case o = 2
