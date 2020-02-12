@@ -110,17 +110,15 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0">
-                                                    <rect key="frame" x="123" y="575" width="39" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0">
+                                                    <rect key="frame" x="146" y="566.5" width="39" height="30"/>
                                                     <state key="normal" title="Menu"/>
                                                     <connections>
                                                         <action selector="menuButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="kbI-70-Y4K"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-uc-RlY">
-                                                    <rect key="frame" x="231" y="575" width="75" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-uc-RlY">
+                                                    <rect key="frame" x="211" y="566.5" width="75" height="30"/>
                                                     <state key="normal" title="New Game"/>
                                                     <connections>
                                                         <action selector="newGameButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="9tf-fd-lBa"/>
@@ -137,12 +135,20 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="1.2" id="8DJ-dG-MCz"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="centerY" secondItem="dSk-l7-EqH" secondAttribute="centerY" id="AET-1n-jYa"/>
                                                 <constraint firstItem="dSk-l7-EqH" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="BiN-fn-uiJ"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="width" secondItem="dSk-l7-EqH" secondAttribute="width" id="EBl-TE-kUa"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="0.8" id="EjO-Rj-swD"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="top" secondItem="7g3-Za-NwS" secondAttribute="topMargin" constant="-11" id="ME4-33-XEb"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="height" secondItem="dSk-l7-EqH" secondAttribute="height" id="QQz-qi-6e0"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.181159" id="RI2-qd-GZt"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="UR7-wC-Swj"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.0942029" id="WCn-LI-hqR"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="YB4-Gf-Z6T"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="cbu-Bl-2rG"/>
                                                 <constraint firstItem="dSk-l7-EqH" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" id="dTU-dy-aIv"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="hnM-yZ-fpF"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="iAj-Dx-ZQy"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="centerX" secondItem="dSk-l7-EqH" secondAttribute="centerX" id="kd9-uu-WhZ"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="leading" secondItem="7g3-Za-NwS" secondAttribute="leadingMargin" constant="-20" id="wWI-CY-eac"/>
@@ -168,7 +174,7 @@
                         <outlet property="gridButton12" destination="dLe-Cc-fRI" id="4Zq-q9-01o"/>
                         <outlet property="gridButton20" destination="16q-2w-Ic0" id="JJ1-ZA-32z"/>
                         <outlet property="gridButton21" destination="AZz-Dp-dd7" id="oTf-Vv-rMP"/>
-                        <outlet property="newGameButton" destination="zJW-uc-RlY" id="iCT-UD-qbw"/>
+                        <outlet property="gridButton22" destination="46W-rd-eut" id="Z4e-tF-clv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZE-r4-5jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

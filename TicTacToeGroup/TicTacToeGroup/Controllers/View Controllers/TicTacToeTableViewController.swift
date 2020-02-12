@@ -25,8 +25,6 @@ class TicTacToeTableViewController: UITableViewController {
     @IBOutlet weak var gridButton20: UIButton!
     @IBOutlet weak var gridButton21: UIButton!
     @IBOutlet weak var gridButton22: UIButton!
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var newGameButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
