@@ -31,11 +31,13 @@ class TicTacToeController {
     }
     
     func takeTurn(row: Int, column: Int, completion: @escaping (GameState) -> Void) {
+        if turn == -1 { return }
         ticTacToeBoard[row][column] = turn
         if !isThereAWinner() && isGameStillGoing() {
             turn = Symbol.getOpposite(symbol: turn)
             completion(.turnTaken)
         } else if isThereAWinner() {
+            turn = Symbol.getOpposite(symbol: turn)
             completion(.winner)
         } else if !isGameStillGoing() {
             completion(.tie)
@@ -44,9 +46,12 @@ class TicTacToeController {
             completion(.error)
         }
     }
+        
+    // MARK: - Private functions
     
+    // Check Corners for Diag Winner
     
-    func isGameStillGoing() -> Bool {
+    private func isGameStillGoing() -> Bool {
         for (r, array) in ticTacToeBoard.enumerated() {
             for (c, _) in array.enumerated() {
                 if ticTacToeBoard[r][c] == Symbol.blank {
@@ -57,13 +62,9 @@ class TicTacToeController {
         return false
     }
     
-    func isThereAWinner() -> Bool {
-        return isCornerWinner() || isHorizontalWinner() || isVerticalWinner() 
+    private func isThereAWinner() -> Bool {
+        return isCornerWinner() || isHorizontalWinner() || isVerticalWinner()
     }
-    
-    // MARK: - Private functions
-    
-    // Check Corners for Diag Winner
     
     private func isCornerWinner() -> Bool {
         return topCornerWinner() || bottomCornerWinner()

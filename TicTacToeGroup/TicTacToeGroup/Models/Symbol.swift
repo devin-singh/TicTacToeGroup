@@ -20,4 +20,20 @@ struct Symbol {
             return Symbol.x
         }
     }
+    
+    static func getImageName(symbol: Int) -> String {
+        if symbol == Symbol.x {
+            return "xSymbol"
+        } else {
+            return "oSymbol"
+        }
+    }
+    
+    static func getWinner(symbol: Int) -> String {
+        if symbol == Symbol.x {
+            return "X Wins!"
+        } else {
+            return "O Wins!"
+        }
+    }
 }
