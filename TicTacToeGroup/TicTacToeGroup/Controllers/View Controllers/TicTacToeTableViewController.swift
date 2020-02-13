@@ -30,6 +30,7 @@ class TicTacToeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initButtonBoard()
+        tableView.allowsSelection = false
     }
     
     override func viewDidLoad() {
@@ -68,6 +69,14 @@ class TicTacToeTableViewController: UITableViewController {
         }
     }
     
+    private func clearButtons() {
+        for (r, row) in buttonBoard.enumerated() {
+            for (c, _) in row.enumerated() {
+                buttonBoard[r][c].setImage(nil, for: .normal)
+            }
+        }
+    }
+    
     //MARK: - Actions
     
     @IBAction func gridButton00Tapped(_ sender: Any) {
@@ -101,5 +110,8 @@ class TicTacToeTableViewController: UITableViewController {
         
     }
     @IBAction func newGameButtonTapped(_ sender: Any) {
+        TicTacToeController.shared.resetBoard()
+        clearButtons()
+        TicTacToeController.shared.turn = Int.random(in: 0...10) > 5 ? Symbol.x : Symbol.o
     }
 }
