@@ -103,7 +103,8 @@
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0">
                                                     <rect key="frame" x="146" y="566.5" width="39" height="30"/>
-                                                    <state key="normal" title="Menu"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                                    <state key="normal" title="MENU"/>
                                                     <connections>
                                                         <action selector="menuButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="kbI-70-Y4K"/>
                                                     </connections>
