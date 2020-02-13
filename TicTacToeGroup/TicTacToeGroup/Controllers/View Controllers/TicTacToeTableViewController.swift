@@ -37,6 +37,7 @@ class TicTacToeTableViewController: UITableViewController {
         super.viewDidLoad()
         initButtonBoard()
     }
+    
     //MARK: - Private functions
     
     private func initButtonBoard() {
@@ -46,11 +47,18 @@ class TicTacToeTableViewController: UITableViewController {
     }
     
     private func updateView(row: Int, column: Int) {
+
         TicTacToeController.shared.takeTurn(row: row, column: column) { (gamestate) in
             DispatchQueue.main.async {
                 switch gamestate {
                 case .turnTaken:
-                    self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    UIView.transition(with: self.buttonBoard[row][column].imageView ?? UIImageView(), duration: 0.2,
+                                      options: .transitionCurlDown,
+                    animations: {
+                    
+                        self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    },
+                    completion: nil)
                 case .tie:
                     self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
                     self.gameStateLabel.text = "Tie Game!"
@@ -60,6 +68,8 @@ class TicTacToeTableViewController: UITableViewController {
                     let symbol = TicTacToeController.shared.turn
                     self.gameStateLabel.text = "\(Symbol.getWinner(symbol: symbol))"
                     TicTacToeController.shared.turn = -1
+                case .goAgain:
+                    break
                 case .error:
                     self.gameStateLabel.text = "Error with Model Controller Logic"
                     TicTacToeController.shared.turn = -1
@@ -75,6 +85,12 @@ class TicTacToeTableViewController: UITableViewController {
                 buttonBoard[r][c].setImage(nil, for: .normal)
             }
         }
+    }
+    
+    private func resetGame() {
+        TicTacToeController.shared.resetBoard()
+        clearButtons()
+        TicTacToeController.shared.turn = Int.random(in: 0...10) > 5 ? Symbol.x : Symbol.o
     }
     
     //MARK: - Actions
@@ -110,8 +126,6 @@ class TicTacToeTableViewController: UITableViewController {
         
     }
     @IBAction func newGameButtonTapped(_ sender: Any) {
-        TicTacToeController.shared.resetBoard()
-        clearButtons()
-        TicTacToeController.shared.turn = Int.random(in: 0...10) > 5 ? Symbol.x : Symbol.o
+        resetGame()
     }
 }
