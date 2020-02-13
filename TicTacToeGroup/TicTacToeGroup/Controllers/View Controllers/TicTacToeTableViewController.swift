@@ -101,7 +101,7 @@ class TicTacToeTableViewController: UITableViewController {
                     self.gameStateLabel.text = "\(Symbol.getWinner(symbol: symbol))"
                     TicTacToeController.shared.turn = -1
                 case .goAgain:
-                    break
+                    return
                 case .error:
                     self.gameStateLabel.text = "Error with Model Controller Logic"
                     TicTacToeController.shared.turn = -1

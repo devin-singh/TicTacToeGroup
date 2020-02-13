@@ -34,22 +34,26 @@ class TicTacToeController {
     
     func takeTurn(row: Int, column: Int, completion: @escaping (GameState) -> Void) {
         if turn == -1 { return }
-        ticTacToeBoard[row][column] = turn
         let position = Position(row: row, column: column)
+        if !occupiedPositions.contains(position) {
+            ticTacToeBoard[row][column] = turn
+        } else {
+            return completion(.goAgain)
+        }
         if !isThereAWinner() && isGameStillGoing() && !occupiedPositions.contains(position) {
             occupiedPositions.append(position)
             turn = Symbol.getOpposite(symbol: turn)
-            completion(.turnTaken)
+            return completion(.turnTaken)
         } else if occupiedPositions.contains(position) {
-            completion(.goAgain)
+            return completion(.goAgain)
         } else if isThereAWinner() {
             turn = Symbol.getOpposite(symbol: turn)
-            completion(.winner)
+            return completion(.winner)
         } else if !isGameStillGoing() && !isThereAWinner() {
             completion(.tie)
         } else {
             print("Error. Gamestate Not recognized")
-            completion(.error)
+            return completion(.error)
         }
     }
         
