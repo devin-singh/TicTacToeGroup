@@ -45,7 +45,7 @@ class TicTacToeController {
         } else if isThereAWinner() {
             turn = Symbol.getOpposite(symbol: turn)
             completion(.winner)
-        } else if !isGameStillGoing() {
+        } else if !isGameStillGoing() && !isThereAWinner() {
             completion(.tie)
         } else {
             print("Error. Gamestate Not recognized")

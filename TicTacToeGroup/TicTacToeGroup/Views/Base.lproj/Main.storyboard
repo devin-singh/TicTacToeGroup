@@ -199,7 +199,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blankSquare" width="104" height="104"/>
+        <image name="blankSquare" width="1" height="1"/>
         <image name="ticTacToeGrid" width="350" height="350"/>
     </resources>
 </document>

@@ -36,4 +36,12 @@ struct Symbol {
             return "O Wins!"
         }
     }
+    
+    static func getPlayerTurn(symbol: Int) -> String {
+        if symbol == Symbol.x {
+            return "X's Turn"
+        } else {
+            return "O's Turn"
+        }
+    }
 }
