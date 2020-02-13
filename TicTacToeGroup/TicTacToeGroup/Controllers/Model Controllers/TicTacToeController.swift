@@ -20,6 +20,8 @@ class TicTacToeController {
     
     var ticTacToeBoard = [[Int]](repeating: [Int](repeating: 0, count: 3), count: 3)
     
+    var occupiedPositions: [Position] = []
+    
     // MARK: - Property Maniputation Functions
     
     func resetBoard() {
@@ -33,13 +35,17 @@ class TicTacToeController {
     func takeTurn(row: Int, column: Int, completion: @escaping (GameState) -> Void) {
         if turn == -1 { return }
         ticTacToeBoard[row][column] = turn
-        if !isThereAWinner() && isGameStillGoing() {
+        let position = Position(row: row, column: column)
+        if !isThereAWinner() && isGameStillGoing() && !occupiedPositions.contains(position) {
+            occupiedPositions.append(position)
             turn = Symbol.getOpposite(symbol: turn)
             completion(.turnTaken)
+        } else if occupiedPositions.contains(position) {
+            completion(.goAgain)
         } else if isThereAWinner() {
             turn = Symbol.getOpposite(symbol: turn)
             completion(.winner)
-        } else if !isGameStillGoing() {
+        } else if !isGameStillGoing() && !isThereAWinner() {
             completion(.tie)
         } else {
             print("Error. Gamestate Not recognized")

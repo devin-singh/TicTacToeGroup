@@ -30,12 +30,15 @@ class TicTacToeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initButtonBoard()
+        tableView.allowsSelection = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initButtonBoard()
+        self.updateTurnLabel()
     }
+    
     //MARK: - Private functions
     
     private func initButtonBoard() {
@@ -44,21 +47,61 @@ class TicTacToeTableViewController: UITableViewController {
                             [gridButton20, gridButton21, gridButton22]]
     }
     
+    private func updateTurnLabel() {
+        let currentPlayerTurn = Symbol.getOpposite(symbol: TicTacToeController.shared.turn)
+        self.gameStateLabel.text = "\(Symbol.getPlayerTurn(symbol: currentPlayerTurn))"
+    }
+    
+    private func clearButtons() {
+        for (r, row) in buttonBoard.enumerated() {
+            for (c, _) in row.enumerated() {
+                buttonBoard[r][c].setImage(nil, for: .normal)
+            }
+        }
+    }
+    
+    private func resetGame() {
+        TicTacToeController.shared.resetBoard()
+        TicTacToeController.shared.occupiedPositions = []
+        clearButtons()
+        TicTacToeController.shared.turn = Int.random(in: 0...10) > 5 ? Symbol.x : Symbol.o
+        self.updateTurnLabel()
+    }
+    
     private func updateView(row: Int, column: Int) {
+
         TicTacToeController.shared.takeTurn(row: row, column: column) { (gamestate) in
             DispatchQueue.main.async {
                 switch gamestate {
                 case .turnTaken:
-                    self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    UIView.transition(with: self.buttonBoard[row][column].imageView ?? UIImageView(), duration: 0.2,
+                                      options: .transitionCrossDissolve,
+                    animations: {
+                        self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    },
+                    completion: nil)
+                    self.updateTurnLabel()
                 case .tie:
-                    self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    UIView.transition(with: self.buttonBoard[row][column].imageView ?? UIImageView(), duration: 0.2,
+                                      options: .transitionCrossDissolve,
+                    animations: {
+                        self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    },
+                    completion: nil)
                     self.gameStateLabel.text = "Tie Game!"
                     TicTacToeController.shared.turn = -1
                 case .winner:
-                    self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    UIView.transition(with: self.buttonBoard[row][column].imageView ?? UIImageView(), duration: 0.2,
+                                      options: .transitionCrossDissolve,
+                    animations: {
+                        self.buttonBoard[row][column].setImage(UIImage(named: Symbol.getImageName(symbol: TicTacToeController.shared.turn)), for: .normal)
+                    },
+                    completion: nil)
                     let symbol = TicTacToeController.shared.turn
                     self.gameStateLabel.text = "\(Symbol.getWinner(symbol: symbol))"
                     TicTacToeController.shared.turn = -1
+                case .goAgain:
+                    break
                 case .error:
                     self.gameStateLabel.text = "Error with Model Controller Logic"
                     TicTacToeController.shared.turn = -1
@@ -101,5 +144,6 @@ class TicTacToeTableViewController: UITableViewController {
         
     }
     @IBAction func newGameButtonTapped(_ sender: Any) {
+        resetGame()
     }
 }

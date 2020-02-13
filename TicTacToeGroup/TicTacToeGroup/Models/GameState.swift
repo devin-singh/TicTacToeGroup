@@ -14,4 +14,5 @@ enum GameState {
     case winner
     case turnTaken
     case error
+    case goAgain
 }
