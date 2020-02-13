@@ -101,21 +101,31 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0">
-                                                    <rect key="frame" x="146" y="566.5" width="39" height="30"/>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
-                                                    <state key="normal" title="MENU"/>
-                                                    <connections>
-                                                        <action selector="menuButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="kbI-70-Y4K"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-uc-RlY">
-                                                    <rect key="frame" x="211" y="566.5" width="75" height="30"/>
-                                                    <state key="normal" title="New Game"/>
-                                                    <connections>
-                                                        <action selector="newGameButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="9tf-fd-lBa"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Zrz-35-Uwj">
+                                                    <rect key="frame" x="62" y="565.5" width="290" height="32"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0" customClass="TicTacButton" customModule="TicTacToeGroup" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="32"/>
+                                                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="12"/>
+                                                            <state key="normal" title="MENU">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="menuButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="kbI-70-Y4K"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-uc-RlY" customClass="TicTacButton" customModule="TicTacToeGroup" customModuleProvider="target">
+                                                            <rect key="frame" x="158" y="0.0" width="132" height="32"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                            <state key="normal" title="New Game">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="newGameButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="9tf-fd-lBa"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uW-Lv-PVP">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
                                                     <constraints>
@@ -127,20 +137,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="1.2" id="8DJ-dG-MCz"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="centerY" secondItem="dSk-l7-EqH" secondAttribute="centerY" id="AET-1n-jYa"/>
                                                 <constraint firstItem="dSk-l7-EqH" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="BiN-fn-uiJ"/>
+                                                <constraint firstItem="Zrz-35-Uwj" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="CnR-aP-JPA"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="width" secondItem="dSk-l7-EqH" secondAttribute="width" id="EBl-TE-kUa"/>
-                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="0.8" id="EjO-Rj-swD"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="top" secondItem="7g3-Za-NwS" secondAttribute="topMargin" constant="-11" id="ME4-33-XEb"/>
+                                                <constraint firstItem="Zrz-35-Uwj" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.7" id="OFj-Da-vWO"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="height" secondItem="dSk-l7-EqH" secondAttribute="height" id="QQz-qi-6e0"/>
-                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.181159" id="RI2-qd-GZt"/>
-                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="UR7-wC-Swj"/>
-                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.0942029" id="WCn-LI-hqR"/>
-                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="YB4-Gf-Z6T"/>
-                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="cbu-Bl-2rG"/>
+                                                <constraint firstItem="Zrz-35-Uwj" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="Yhf-bL-5da"/>
                                                 <constraint firstItem="dSk-l7-EqH" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" id="dTU-dy-aIv"/>
-                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="hnM-yZ-fpF"/>
+                                                <constraint firstItem="Zrz-35-Uwj" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.05" id="e1E-4j-6ng"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="iAj-Dx-ZQy"/>
                                                 <constraint firstItem="QAS-c4-1CU" firstAttribute="centerX" secondItem="dSk-l7-EqH" secondAttribute="centerX" id="kd9-uu-WhZ"/>
                                                 <constraint firstItem="7uW-Lv-PVP" firstAttribute="leading" secondItem="7g3-Za-NwS" secondAttribute="leadingMargin" constant="-20" id="wWI-CY-eac"/>
