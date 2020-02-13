@@ -1,24 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGZ-ee-a7j">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--TicTacToe-->
+        <scene sceneID="Sdj-O1-KEL">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="ZtN-iA-P1A" customClass="TicTacToeTableViewController" customModule="TicTacToeGroup" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lBe-Cz-lxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="Tj8-L7-0E2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="646" id="Xf6-nh-fLY">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="646"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf6-nh-fLY" id="7g3-Za-NwS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticTacToeGrid" translatesAutoresizingMaskIntoConstraints="NO" id="dSk-l7-EqH">
+                                                    <rect key="frame" x="32" y="148" width="350" height="350"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-c4-1CU">
+                                                    <rect key="frame" x="32" y="148" width="350" height="350"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jGv-26-EXz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="116.5"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdJ-Nl-5S7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton00Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="gZ7-vL-hBp"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwR-Zm-XEb">
+                                                                    <rect key="frame" x="116.5" y="0.0" width="117" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton01Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="cDj-XA-n8O"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NA-2t-0le">
+                                                                    <rect key="frame" x="233.5" y="0.0" width="116.5" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton02Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="8ag-Bw-LlM"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O64-4j-NRy">
+                                                            <rect key="frame" x="0.0" y="116.5" width="350" height="117"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufw-Wd-OFw">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="117"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton10Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="W2G-nf-RWv"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1z-ZY-T9C">
+                                                                    <rect key="frame" x="116.5" y="0.0" width="117" height="117"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton11Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="xso-UR-8Ei"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLe-Cc-fRI">
+                                                                    <rect key="frame" x="233.5" y="0.0" width="116.5" height="117"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton12Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="cu0-tU-Otb"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IoO-Aj-sp0">
+                                                            <rect key="frame" x="0.0" y="233.5" width="350" height="116.5"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16q-2w-Ic0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton20Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="6qC-VD-tNj"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZz-Dp-dd7">
+                                                                    <rect key="frame" x="116.5" y="0.0" width="117" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton21Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="0J7-8G-2wI"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46W-rd-eut">
+                                                                    <rect key="frame" x="233.5" y="0.0" width="116.5" height="116.5"/>
+                                                                    <state key="normal" image="blankSquare"/>
+                                                                    <connections>
+                                                                        <action selector="gridButton22Tapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="c95-4W-FEO"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf9-2U-sV0">
+                                                    <rect key="frame" x="146" y="566.5" width="39" height="30"/>
+                                                    <state key="normal" title="Menu"/>
+                                                    <connections>
+                                                        <action selector="menuButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="kbI-70-Y4K"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-uc-RlY">
+                                                    <rect key="frame" x="211" y="566.5" width="75" height="30"/>
+                                                    <state key="normal" title="New Game"/>
+                                                    <connections>
+                                                        <action selector="newGameButtonTapped:" destination="ZtN-iA-P1A" eventType="touchUpInside" id="9tf-fd-lBa"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uW-Lv-PVP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="lPB-jU-xMq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="1.2" id="8DJ-dG-MCz"/>
+                                                <constraint firstItem="QAS-c4-1CU" firstAttribute="centerY" secondItem="dSk-l7-EqH" secondAttribute="centerY" id="AET-1n-jYa"/>
+                                                <constraint firstItem="dSk-l7-EqH" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="BiN-fn-uiJ"/>
+                                                <constraint firstItem="QAS-c4-1CU" firstAttribute="width" secondItem="dSk-l7-EqH" secondAttribute="width" id="EBl-TE-kUa"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" multiplier="0.8" id="EjO-Rj-swD"/>
+                                                <constraint firstItem="7uW-Lv-PVP" firstAttribute="top" secondItem="7g3-Za-NwS" secondAttribute="topMargin" constant="-11" id="ME4-33-XEb"/>
+                                                <constraint firstItem="QAS-c4-1CU" firstAttribute="height" secondItem="dSk-l7-EqH" secondAttribute="height" id="QQz-qi-6e0"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.181159" id="RI2-qd-GZt"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="UR7-wC-Swj"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="width" secondItem="7g3-Za-NwS" secondAttribute="width" multiplier="0.0942029" id="WCn-LI-hqR"/>
+                                                <constraint firstItem="Hf9-2U-sV0" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="YB4-Gf-Z6T"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" multiplier="1.8" id="cbu-Bl-2rG"/>
+                                                <constraint firstItem="dSk-l7-EqH" firstAttribute="centerY" secondItem="7g3-Za-NwS" secondAttribute="centerY" id="dTU-dy-aIv"/>
+                                                <constraint firstItem="zJW-uc-RlY" firstAttribute="height" secondItem="7g3-Za-NwS" secondAttribute="height" multiplier="0.0464396" id="hnM-yZ-fpF"/>
+                                                <constraint firstItem="7uW-Lv-PVP" firstAttribute="centerX" secondItem="7g3-Za-NwS" secondAttribute="centerX" id="iAj-Dx-ZQy"/>
+                                                <constraint firstItem="QAS-c4-1CU" firstAttribute="centerX" secondItem="dSk-l7-EqH" secondAttribute="centerX" id="kd9-uu-WhZ"/>
+                                                <constraint firstItem="7uW-Lv-PVP" firstAttribute="leading" secondItem="7g3-Za-NwS" secondAttribute="leadingMargin" constant="-20" id="wWI-CY-eac"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ZtN-iA-P1A" id="YOa-sf-sbJ"/>
+                            <outlet property="delegate" destination="ZtN-iA-P1A" id="3qY-jr-ig4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="TicTacToe" id="Cpd-OG-DWM"/>
+                    <connections>
+                        <outlet property="gameStateLabel" destination="7uW-Lv-PVP" id="BLZ-xj-pZe"/>
+                        <outlet property="gridButton00" destination="MdJ-Nl-5S7" id="EaR-kc-Z14"/>
+                        <outlet property="gridButton01" destination="nwR-Zm-XEb" id="7B7-95-wfc"/>
+                        <outlet property="gridButton02" destination="0NA-2t-0le" id="1gQ-bm-abV"/>
+                        <outlet property="gridButton10" destination="Ufw-Wd-OFw" id="5qn-cq-mBJ"/>
+                        <outlet property="gridButton11" destination="a1z-ZY-T9C" id="qtk-73-6cr"/>
+                        <outlet property="gridButton12" destination="dLe-Cc-fRI" id="4Zq-q9-01o"/>
+                        <outlet property="gridButton20" destination="16q-2w-Ic0" id="JJ1-ZA-32z"/>
+                        <outlet property="gridButton21" destination="AZz-Dp-dd7" id="oTf-Vv-rMP"/>
+                        <outlet property="gridButton22" destination="46W-rd-eut" id="Z4e-tF-clv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZE-r4-5jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-88.405797101449281" y="52.901785714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9d5-l2-Sec">
+            <objects>
+                <navigationController id="pGZ-ee-a7j" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VWm-Df-g0c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZtN-iA-P1A" kind="relationship" relationship="rootViewController" id="eEP-rq-GbC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghU-BC-GU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="53"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blankSquare" width="1" height="1"/>
+        <image name="ticTacToeGrid" width="350" height="350"/>
+    </resources>
 </document>
